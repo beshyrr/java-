@@ -3,7 +3,7 @@ public class Zoo {
     Aquatic [] aquaticAnimals;
     String name;
     String city;
-    static final int nbrCages = 25;
+    static final int nbrCages = 3;
     public Zoo(String name, String city) {
         animals = new Animal[nbrCages];
         aquaticAnimals = new Aquatic[10];
@@ -77,18 +77,21 @@ public class Zoo {
         System.out.println("Number of penguins: " + penguins);
     }
 
-    public boolean addAnimal(Animal animal){
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException {
+        if (animal.age < 0) {
+            throw new InvalidAgeException("Invalid age for animal: " + animal.name);
+        }
         if (searchAnimal(animal) != -1) {
             System.out.println("Animal present : " + animal.name);
-            return false;
+            return;
         }
         for (int i = 0; i < animals.length; i++) {
             if (animals[i] == null) {
                 animals[i] = animal;
-                return true;
+                return;
             }
         }
-        return false;
+        throw new ZooFullException("Zoo is full, cannot add: " + animal.name);
     }
     public int searchAnimal(Animal animal){
         for (int i = 0; i < animals.length; i++) {

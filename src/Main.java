@@ -8,15 +8,51 @@ public class Main {
         Animal elephant = new Animal("Éléphantidé", "Éléphant", 10, true);
         Animal girafe = new Animal("Giraffidé", "Girafe", 8, true);
         Zoo z1 = new Zoo("ZooFrance", "Paris");
-        z1.addAnimal(lion);
-        z1.addAnimal(elephant);
-        z1.addAnimal(lapin);
+        try {
+            z1.addAnimal(lion);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Nombre d'animaux z1: " + z1.compterAnimaux());
+        }
+        try {
+            z1.addAnimal(elephant);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Nombre d'animaux z1: " + z1.compterAnimaux());
+        }
+        try {
+            z1.addAnimal(lapin);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Nombre d'animaux z1: " + z1.compterAnimaux());
+        }
 
         /*myZoo.displayZoo();*/
         Zoo z2 = new Zoo("ZooTunis", "Paris");
-        z2.addAnimal(lion);
-        z2.addAnimal(elephant);
-        z2.addAnimal(lapin);
+        try {
+            z2.addAnimal(lion);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Nombre d'animaux z2: " + z2.compterAnimaux());
+        }
+        try {
+            z2.addAnimal(elephant);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Nombre d'animaux z2: " + z2.compterAnimaux());
+        }
+        try {
+            z2.addAnimal(lapin);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Nombre d'animaux z2: " + z2.compterAnimaux());
+        }
 
         if(Zoo.comparerZoo(z1,z2)== null){
             System.out.println("egale");
