@@ -1,10 +1,12 @@
 public class Zoo {
     Animal [] animals;
+    Aquatic [] aquaticAnimals;
     String name;
     String city;
     static final int nbrCages = 25;
     public Zoo(String name, String city) {
         animals = new Animal[nbrCages];
+        aquaticAnimals = new Aquatic[10];
         this.name = name;
         this.city = city;
     }
@@ -31,6 +33,48 @@ public class Zoo {
             }
         }
         return sb.toString();
+    }
+
+    public void addAquaticAnimal(Aquatic aquatic){
+        for (int i = 0; i < aquaticAnimals.length; i++) {
+            if (aquaticAnimals[i] == null) {
+                aquaticAnimals[i] = aquatic;
+                return;
+            }
+        }
+        System.out.println("Aquatic section is full");
+    }
+
+    public void swimAllAquatics(){
+        for (Aquatic a : aquaticAnimals) {
+            if (a != null) {
+                a.swim();
+            }
+        }
+    }
+
+    public float maxPenguinSwimmingDepth(){
+        float max = 0f;
+        for (Aquatic a : aquaticAnimals) {
+            if (a instanceof Penguin) {
+                float depth = ((Penguin) a).getSwimmingDepth();
+                if (depth > max) {
+                    max = depth;
+                }
+            }
+        }
+        return max;
+    }
+
+    public void displayNumberOfAquaticsByType(){
+        int dolphins = 0;
+        int penguins = 0;
+        for (Aquatic a : aquaticAnimals) {
+            if (a instanceof Dolphin) dolphins++;
+            if (a instanceof Penguin) penguins++;
+        }
+        System.out.println("Number of dolphins: " + dolphins);
+        System.out.println("Number of penguins: " + penguins);
     }
 
     public boolean addAnimal(Animal animal){

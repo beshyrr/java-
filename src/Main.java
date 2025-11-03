@@ -33,6 +33,25 @@ public class Main {
         //myZoo.removeAnimal(girafe);
         /*z1.isZooFull();*/
 
+        // Prosit 6 demo: add aquatic animals and show behaviors
+        Dolphin d1 = new Dolphin("Delphinidae", "Flipper", 6, true, "Sea", 30.5f);
+        Dolphin d2 = new Dolphin("Delphinidae", "Echo", 4, true, "Ocean", 28.0f);
+        Penguin p1 = new Penguin("Spheniscidae", "Pingo", 3, false, "Antarctica", 50.0f);
+        Penguin p2 = new Penguin("Spheniscidae", "Chilly", 2, false, "Antarctica", 65.5f);
 
+        z1.addAquaticAnimal(d1);
+        z1.addAquaticAnimal(d2);
+        z1.addAquaticAnimal(p1);
+        z1.addAquaticAnimal(p2);
+
+        // Instruction 27: call swim() on all aquatics
+        z1.swimAllAquatics();
+        // Observation: polymorphism — each type executes its own swim()
+
+        // Instruction 29: max penguin depth
+        System.out.println("Max penguin depth: " + z1.maxPenguinSwimmingDepth());
+
+        // Instruction 30: display numbers by type
+        z1.displayNumberOfAquaticsByType();
     }
 }
