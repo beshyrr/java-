@@ -48,7 +48,7 @@ public class SocieteArrayList implements IGestion<Employee> {
     }
 
     @Override
-    public void trierEmployeParNomDepartementEtGrade() {
+    public void trierEmployeParNomDépartementEtGrade() {
         // Utilisation de Comparator
         Collections.sort(employes, new Comparator<Employee>() {
             @Override
