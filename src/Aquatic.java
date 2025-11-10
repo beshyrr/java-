@@ -1,4 +1,4 @@
-public abstract class Aquatic extends Animal {
+public abstract class Aquatic extends Animal implements Carnivore<Food> {
     String habitat;
 
     public Aquatic(String family, String name, int age, boolean isMammal, String habitat) {
@@ -7,6 +7,19 @@ public abstract class Aquatic extends Animal {
     }
 
     public abstract void swim();
+
+    @Override
+    public void eatMeat(Food meat) {
+        if (meat == null) {
+            System.out.println("No food provided for " + name);
+            return;
+        }
+        if (meat == Food.MEAT || meat == Food.BOTH) {
+            System.out.println(name + " eats meat.");
+        } else {
+            System.out.println(name + " cannot eat plants only.");
+        }
+    }
 
     @Override
     public boolean equals(Object obj) {

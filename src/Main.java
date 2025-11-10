@@ -89,5 +89,17 @@ public class Main {
 
         // Instruction 30: display numbers by type
         z1.displayNumberOfAquaticsByType();
+
+        // Prosit 8: test food interfaces and implementations
+        Terrestrial t1 = new Terrestrial("Canidae", "Fox", 4, true);
+        // Aquatic (Dolphin) eating behaviors
+        d1.eatMeat(Food.MEAT);
+        d2.eatMeat(Food.PLANT);
+        // Penguin (Aquatic) eating behaviors
+        p1.eatMeat(Food.BOTH);
+        // Terrestrial omnivore behaviors
+        t1.eatPlant(Food.PLANT);
+        t1.eatMeat(Food.MEAT);
+        t1.eatPlantAndMeet(Food.BOTH);
     }
 }
