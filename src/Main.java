@@ -101,5 +101,49 @@ public class Main {
         t1.eatPlant(Food.PLANT);
         t1.eatMeat(Food.MEAT);
         t1.eatPlantAndMeet(Food.BOTH);
+
+        // Prosit 11: gestion des affectations Employé -> Département
+        AffectationHashMap affectationHashMap = new AffectationHashMap();
+
+        Employee emp1 = new Employee(1, "Ali", "Ben Salah", "IT", 3);
+        Employee emp2 = new Employee(2, "Sara", "Trabelsi", "Finance", 2);
+        Employee emp3 = new Employee(3, "Mehdi", "Ayari", "HR", 4);
+
+        Departement depIT = new Departement(101, "Informatique", 15);
+        Departement depFinance = new Departement(102, "Finance", 8);
+        Departement depHR = new Departement(103, "Ressources Humaines", 12);
+
+        affectationHashMap.ajouterEmployeDepartement(emp1, depIT);
+        affectationHashMap.ajouterEmployeDepartement(emp2, depFinance);
+        affectationHashMap.ajouterEmployeDepartement(emp3, depHR);
+
+        System.out.println("--- Affectations initiales ---");
+        affectationHashMap.afficherEmployesEtDepartements();
+
+        // Tentative d'ajouter le même employé dans un autre département
+        affectationHashMap.ajouterEmployeDepartement(emp1, depFinance);
+        System.out.println("--- Après tentative de double affectation ---");
+        affectationHashMap.afficherEmployesEtDepartements();
+
+        // Recherche et suppression
+        System.out.println("Emp1 présent ? " + affectationHashMap.rechercherEmploye(emp1));
+        System.out.println("Département IT présent ? " + affectationHashMap.rechercherDepartement(depIT));
+
+        affectationHashMap.supprimerEmployeEtDepartement(emp2, depFinance);
+        System.out.println("--- Après suppression stricte ---");
+        affectationHashMap.afficherEmployesEtDepartements();
+
+        affectationHashMap.supprimerEmploye(emp3);
+        System.out.println("--- Après suppression d'un employé ---");
+        affectationHashMap.afficherEmployesEtDepartements();
+
+        System.out.println("--- Employés triés ---");
+        affectationHashMap.trierMap().forEach((employee, departement) ->
+                System.out.printf("%s -> %s%n", employee.getNom(), departement.getNom()));
+
+        System.out.println("--- Employés enregistrés ---");
+        affectationHashMap.afficherEmployes();
+        System.out.println("--- Départements enregistrés ---");
+        affectationHashMap.afficherDepartements();
     }
 }

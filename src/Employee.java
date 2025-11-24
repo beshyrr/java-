@@ -73,6 +73,13 @@ public class Employee implements Comparable<Employee> {
         return id == employee.id && nom != null && nom.equals(employee.nom);
     }
 
+    @Override
+    public int hashCode() {
+        int result = Integer.hashCode(id);
+        result = 31 * result + (nom != null ? nom.hashCode() : 0);
+        return result;
+    }
+
     // Implémentation de Comparable pour le tri par ID
     @Override
     public int compareTo(Employee other) {
