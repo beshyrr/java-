@@ -1,29 +1,29 @@
-# 🐯 Programmation Java - Prosit 3
+# 🐯 Programmation Java - Prosit 10
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![OOP](https://img.shields.io/badge/Object--Oriented-Programming-blue?style=for-the-badge)
+![OOP](https://img.shields.io/badge/HashMap-blue?style=for-the-badge)
 
 ## 📌 Description
-Ce projet illustre les concepts fondamentaux de la **programmation orientée objet en Java** à travers un exemple simple et pédagogique.  
-Il met en avant :
-- La **création de classes et objets**
-- L’**encapsulation** et les **attributs/méthodes**
-- Les **constructeurs**
-- La **gestion de projets** en Java avec IntelliJ IDEA
 
-## 🚀 Contenu
-- `Zoo.java` : classe de gestion d’un zoo.
-- `ZooManagement.java` : point d’entrée du programme.
+Ce projet correspond au **Prosit 10** et introduit `HashMap` pour gérer des **associations clé–valeur**.
 
-## 🎨 Design
-Le projet adopte un style simple et clair, conçu pour l’apprentissage des bases de la POO en Java.
+## 🚀 Contenu principal
 
-## 👨‍💻 Auteur
-**Mohamed Aziz Mchala**  
-📧 Email : [azizmchela00@gmail.com](mailto:azizmchela00@gmail.com) | [Mohamedaziz.Mchala@esprit.tn](mailto:Mohamedaziz.Mchala@esprit.tn)  
-🔗 [Linktree - CodeMchala](https://linktr.ee/codeMchala?utm_source=linktree_profile_share&ltsid=94cf9b07-c1d7-4e33-a4bb-adce57d2ae0c)  
-💼 [LinkedIn](https://www.linkedin.com/in/mohamed-aziz-mchala-89b063250/)
+- Utilisation de `HashMap<K, V>` (par exemple : `Departement` → liste d’employés, ou autres relations).
+- Ajout, suppression, mise à jour et parcours des entrées de la map.
+- Recherche rapide par clé.
+
+## 🎯 Objectifs pédagogiques
+
+- Comprendre la structure clé–valeur.
+- Choisir un bon type de clé (ex : `String`, `Integer`, objet métier).
+- Manipuler les vues `keySet()`, `values()` et `entrySet()`.
 
 ## ⚙️ Technologies
+
 - **Java (JDK 17 ou supérieur recommandé)**
 - **IntelliJ IDEA** pour le développement
+
+## 👨‍💻 Auteur
+
+**med bechir ben atiia**
